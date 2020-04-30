@@ -1,22 +1,29 @@
-let availableAirplanes = [
-    {
-     name: 'AeroJet',
-     fuelCapacity: 800,
-     availableStaff: ['pilots','flightAttendants','engineers',         'medicalAssistance', 'sensorOperators']
-     },
-    {
-      name: 'SkyJet',
-      fuelCapacity: 500,
-      availableStaff: ['pilots','flightAttendants']
-      }
-    ]
+export let availableAirplanes = [
+  {
+   name: 'AeroJet',
+   fuelCapacity: 800,
+   availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+   maxSpeed: 1200,
+   minSpeed: 300
+  }, 
+  {name: 'SkyJet',
+   fuelCapacity: 500,
+   availableStaff: ['pilots', 'flightAttendants'],
+   maxSpeed: 800,
+   minSpeed: 200
+  }
+  ]
   
-  let flightRequirements = {
+  export let flightRequirements = {
     requiredStaff: 4,
+    requiredSpeedRange: 700
   };
   
-  const meetsStaffRequirements = (availableStaff, requiredStaff) => {
-    return availableStaff.length >= requiredStaff ? true : false;
+  export const meetsStaffRequirements =(availableStaff, requiredStaff) => {
+   availableStaff.length >= requiredStaff ? true : false
   }
   
-  export {availableAirplanes, flightRequirements, meetsStaffRequirements};
+  export const meetsSpeedRangeRequirements = (maxSpeed,minSpeed,requiredSpeedRange) => {
+    let range = maxSpeed - minSpeed;
+    return range > requiredSpeedRange ? true : false
+  }
