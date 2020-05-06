@@ -9,3 +9,6 @@ const reverse = (string) => {
 console.log(reverse('string'))
 
 export {reverse}
+
+
+console.log('test')
