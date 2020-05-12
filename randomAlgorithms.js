@@ -43,3 +43,23 @@ const fizzBuzz = () => {
 }
 
 fizzBuzz()
+
+
+// Find the Longest Word in a String
+
+let string = 'this is a string'
+
+
+const returnWord = (string) => {
+    let newString = string.split(' ')
+    const wordLength = newString.map(word => word.length)
+    return Math.max(...wordLength)
+}
+
+console.log(returnWord(string)) 
+
+
+
+
+
+
