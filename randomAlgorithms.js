@@ -58,6 +58,20 @@ const returnWord = (string) => {
 
 console.log(returnWord(string)) 
 
+// Return Largest Numbers in Arrays
+
+const largestInArray = (arr) => {
+  for (let i =0; i<arr.length; i++) {
+    let largestNum = 0
+    for (let j=0; j<arr[i].length; j++) {
+      if (arr[i][j] > largestNum) {
+        largestNum = arr[i][j]
+      }
+    }
+    results.push(largestNum)
+  }
+  return results
+}
 
 
 
