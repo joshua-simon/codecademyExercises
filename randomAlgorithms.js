@@ -64,6 +64,7 @@ const largestInArray = (arr) => {
   for (let i =0; i<arr.length; i++) {
     let largestNum = 0
     for (let j=0; j<arr[i].length; j++) {
+      let largestNum = arr[i][0]
       if (arr[i][j] > largestNum) {
         largestNum = arr[i][j]
       }
@@ -73,7 +74,17 @@ const largestInArray = (arr) => {
   return results
 }
 
+// Confirm the Ending: Check if a string (first argument, str) ends with the given target string (second argument, target).
 
+const checkEnd = (str, target) => {
+  
+  let sliced = str.slice(str.length - target.length)
+  if (sliced === target) {
+    return true
+  } else {
+    return false
+  }
+}
 
 
 
