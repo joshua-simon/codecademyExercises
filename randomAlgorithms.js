@@ -86,5 +86,20 @@ const checkEnd = (str, target) => {
   }
 }
 
+// Repeat a String
+
+const repeat = (str,num) => {
+  
+  let accumulatedString =''
+  
+  while(num>0) {
+    accumulatedString +=str
+    num--
+  }
+  return accumulatedString
+}
+
+
+
 
 
