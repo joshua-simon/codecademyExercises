@@ -99,7 +99,13 @@ const repeat = (str,num) => {
   return accumulatedString
 }
 
+//Find sum of arrays within an array
 
-
-
+const arraySum =(arr) => {
+  let total = 0
+  for (let i=0; i<arr.length; i++) {
+    total += arr[i].reduce((x,y) => x+y)
+  }
+  return total
+}
 
