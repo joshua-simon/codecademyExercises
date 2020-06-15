@@ -21,3 +21,35 @@ class App extends React.Component {
 }
 
 export default App
+
+//login conditional render
+
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            isLoggedIn: false
+        }
+        this.handleClick = this.handleClick.bind(this)
+    }
+    
+    handleClick() {
+        this.setState(prevState =>{
+          return {  isLoggedIn: !prevState.isLoggedIn
+          }
+        })
+    }
+    
+    render() {
+        let isLogged =''
+        this.state.isLoggedIn ? isLogged = 'Log in' : isLogged = 'Log out'
+    return (
+        <div>
+            <button onClick = {this.handleClick}>Log In/Out</button>
+            <h2>{isLogged}</h2>
+        </div>
+    )
+    }
+}
+
+export default App
