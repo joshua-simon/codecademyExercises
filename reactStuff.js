@@ -142,3 +142,63 @@ export default App
 //inside the handleChange function. For example, the 'name' property of the inputs. Or, the
 //keystroke event, denoted by e.target.value.
 //[e.target.name] is in sqaure brackets, because the name property is a string.
+
+//input with checkbox and select menu
+
+import React from 'react'
+
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            firstName: '',
+            lastName: '',
+            isFriendly: true,
+            favColor: 'blue'
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+    
+    handleChange(event) {
+        const {name, value, type, checked} = event.target
+        type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
+    }
+    
+    render() {
+        return (
+            <div>
+            <input type = 'text' 
+            name = 'firstName' 
+            placeholder = 'first name' 
+            onChange = {this.handleChange}
+            />
+            <input type = 'text'
+             name = 'lastName' 
+             placeholder = 'last name' 
+             onChange = {this.handleChange}
+             />
+            <h1>{this.state.firstName} {this.state.lastName}</h1>
+            <input type = 'checkbox'
+             checked = {this.state.isFriendly}
+             onChange = {this.handleChange}
+             name = 'isFriendly'
+             />
+             <br/>
+             <label>Favourite color</label>
+             <select
+             value = {this.state.favColor}
+             onChange = {this.handleChange}
+             name = 'favColor'
+             >
+             <option value = 'blue'>Blue</option>
+             <option value ='green'>Green</option>
+             <option value = 'yellow'>Yellow</option>
+             </select>
+             <h2>Your favourite colour is {this.state.favColor}</h2>
+            </div>
+        )
+    }  
+}
+
+
+export default App
