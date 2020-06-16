@@ -93,3 +93,52 @@ class App extends React.Component {
 }
 
 export default App
+
+//simple react form
+
+
+import React from 'react'
+
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            firstName: '',
+            lastName: ''
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+    
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+    
+    render() {
+        return (
+            <div>
+            <input type = 'text' 
+            name = 'firstName' 
+            placeholder = 'first name' 
+            onChange = {this.handleChange}
+            />
+            <input type = 'text'
+             name = 'lastName' 
+             placeholder = 'last name' 
+             onChange = {this.handleChange}
+             />
+            <h1>{this.state.firstName} {this.state.lastName}</h1>
+            </div>
+        )
+    }  
+}
+
+
+export default App
+
+// onChange sends an event object to handleEvent, with all the information about the input
+//(ie, what is being inputed, properties such as name etc ). These properties can be accessed
+//inside the handleChange function. For example, the 'name' property of the inputs. Or, the
+//keystroke event, denoted by e.target.value.
+//[e.target.name] is in sqaure brackets, because the name property is a string.
